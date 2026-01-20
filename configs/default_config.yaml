@@ -1,0 +1,105 @@
+# OpenPACEvolve Default Configuration
+# Progress-Aware Consistent Evolution Framework
+
+# General settings
+max_iterations: 100
+checkpoint_interval: 10
+log_level: INFO
+random_seed: 42
+output_dir: openpacevolve_output
+
+# Evolution settings
+diff_based_evolution: true
+max_code_length: 10000
+
+# Early stopping
+early_stopping_patience: null
+convergence_threshold: 0.001
+early_stopping_metric: combined_score
+
+# LLM configuration
+llm:
+  models:
+    - name: "gemini-2.0-flash-lite"
+      weight: 0.8
+    - name: "gemini-2.0-flash"
+      weight: 0.2
+  api_base: "https://generativelanguage.googleapis.com/v1beta/openai/"
+  # api_key: Set via OPENAI_API_KEY environment variable
+  temperature: 0.7
+  top_p: 0.95
+  max_tokens: 4096
+  timeout: 60
+  retries: 3
+  retry_delay: 5
+
+# Hierarchical Context Management (HCM)
+context:
+  max_ideas: 20
+  idea_cap: 10
+  max_hypotheses_per_idea: 10
+  hypothesis_summarization_trigger: 8
+  prune_low_performing_threshold: 0.3
+  min_experiments_before_prune: 3
+
+# Momentum-Based Backtracking (MBB)  
+momentum:
+  beta: 0.9  # EWMA decay factor
+  intervention_threshold: 0.1  # Trigger when momentum < threshold
+  power_law_alpha: 1.5  # Power-law distribution for backtracking
+  min_backtrack_generations: 5
+
+# Self-Adaptive Crossover Sampling
+sampling:
+  enable_adaptive_sampling: true
+  synergy_bonus_weight: 1.0
+  stagnation_threshold: 0.2
+
+# Database and Island configuration
+database:
+  in_memory: true
+  population_size: 1000
+  archive_size: 100
+  num_islands: 5
+  migration_interval: 50
+  migration_rate: 0.1
+  elite_selection_ratio: 0.1
+  exploration_ratio: 0.2
+  exploitation_ratio: 0.7
+  feature_dimensions:
+    - complexity
+    - diversity
+  feature_bins: 10
+
+# Prompt configuration
+prompt:
+  system_message: |
+    You are an expert programmer specializing in code optimization and algorithm design.
+    Your task is to improve programs through evolutionary search, generating new variations 
+    that achieve better performance on the evaluation metrics.
+  num_top_programs: 3
+  num_diverse_programs: 2
+  use_template_stochasticity: true
+  include_artifacts: true
+  max_artifact_bytes: 20480
+
+# Evaluator configuration
+evaluator:
+  timeout: 300
+  max_retries: 3
+  cascade_evaluation: true
+  cascade_thresholds:
+    - 0.5
+    - 0.75
+  parallel_evaluations: 4
+  use_llm_feedback: false
+  llm_feedback_weight: 0.1
+
+# Evolution trace logging
+evolution_trace:
+  enabled: false
+  format: jsonl
+  include_code: false
+  include_prompts: true
+  buffer_size: 10
+  compress: false

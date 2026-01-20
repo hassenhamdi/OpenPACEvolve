@@ -1,0 +1,61 @@
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "openpacevolve"
+dynamic = ["version"]
+description = "Open-source implementation of PACEvolve - Progress-Aware Consistent Evolution framework"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "Apache-2.0" }
+authors = [{ name = "OpenPACEvolve Contributors" }]
+dependencies = [
+    "openai>=1.0.0",
+    "pyyaml>=6.0",
+    "numpy>=1.22.0",
+    "tqdm>=4.64.0",
+    "dacite>=1.9.2",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+    "pytest-asyncio>=0.21.0",
+    "black>=22.0.0",
+    "isort>=5.10.0",
+    "mypy>=0.950",
+]
+
+[tool.black]
+line-length = 100
+target-version = ['py310']
+include = '\.pyi?$'
+
+[tool.isort]
+profile = "black"
+line_length = 100
+
+[tool.mypy]
+python_version = "3.10"
+warn_return_any = true
+warn_unused_configs = true
+
+[project.scripts]
+openpacevolve = "pacevolve.cli:main"
+
+[tool.pytest.ini_options]
+markers = [
+    "slow: marks tests as slow",
+    "integration: marks tests as integration tests",
+]
+addopts = "--strict-markers"
+
+[tool.setuptools.packages.find]
+include = ["pacevolve*"]
+
+[tool.setuptools.package-data]
+pacevolve = ["prompts/defaults/*.txt", "prompts/defaults/*.json"]
+
+[tool.setuptools.dynamic]
+version = { attr = "pacevolve._version.__version__" }

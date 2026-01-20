@@ -1,0 +1,43 @@
+# Function Minimization Example Configuration
+
+max_iterations: 20
+checkpoint_interval: 5
+
+llm:
+  models:
+    - name: "gemini-2.0-flash-lite"
+      weight: 0.8
+    - name: "gemini-2.0-flash"
+      weight: 0.2
+  api_base: "https://generativelanguage.googleapis.com/v1beta/openai/"
+  temperature: 0.7
+  max_tokens: 8000
+  timeout: 120
+
+prompt:
+  system_message: |
+    You are an expert programmer specializing in optimization algorithms.
+    Your task is to improve a function minimization algorithm to find the global minimum 
+    of a complex function with many local minima.
+    
+    The target function is: f(x, y) = sin(x) * cos(y) + sin(x*y) + (x² + y²)/20
+    The global minimum is approximately at (-1.704, 0.678) with value -1.519.
+    
+    Focus on improving the search_algorithm function to reliably find the global minimum,
+    escaping local minima that might trap simple algorithms.
+
+database:
+  population_size: 50
+  num_islands: 3
+  migration_interval: 10
+  migration_rate: 0.15
+
+momentum:
+  beta: 0.85
+  intervention_threshold: 0.15
+
+evaluator:
+  timeout: 60
+  cascade_thresholds:
+    - 0.3
+    - 0.6
