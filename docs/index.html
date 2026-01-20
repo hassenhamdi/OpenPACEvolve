@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OpenPACEvolve - Evolutionary AI Framework</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="background-glow"></div>
+
+    <header>
+        <div class="container nav-container">
+            <div class="logo">Open<span>PACEvolve</span></div>
+            <nav>
+                <a href="#features">Features</a>
+                <a href="#architecture">Architecture</a>
+                <a href="#quickstart">Quick Start</a>
+                <a href="https://github.com/HassenHamdi/OpenPACEvolve" class="github-btn"><i class="fab fa-github"></i> GitHub</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1>Progress-Aware <br><span class="gradient-text">Consistent Evolution</span></h1>
+                    <p class="subtitle">A mature, open-source implementation of the PACEvolve algorithm for evolutionary coding agents.</p>
+                    <div class="cta-group">
+                        <a href="https://github.com/HassenHamdi/OpenPACEvolve" class="btn primary-btn">Get Started</a>
+                        <a href="#features" class="btn secondary-btn">Learn More</a>
+                    </div>
+                    <div class="badges">
+                        <img src="https://img.shields.io/badge/License-Apache_2.0-blue.svg?style=for-the-badge" alt="License">
+                        <img src="https://img.shields.io/badge/python-3.10+-blue.svg?style=for-the-badge" alt="Python">
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="../assets/banner.png" alt="OpenPACEvolve Banner" class="banner-img">
+                </div>
+            </div>
+        </section>
+
+        <section id="features" class="features">
+            <div class="container">
+                <h2>Solutions for Evolutionary Challenges</h2>
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <div class="icon"><i class="fas fa-brain"></i></div>
+                        <h3>Context Pollution</h3>
+                        <p>Solved via <strong>Hierarchical Context Management (HCM)</strong>. Separates high-level Ideas from concrete Hypotheses to keep context clean.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="icon"><i class="fas fa-chart-line"></i></div>
+                        <h3>Mode Collapse</h3>
+                        <p>Solved via <strong>Momentum-Based Backtracking (MBB)</strong>. Uses EWMA for real-time progress tracking to intelligently escape local minima.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="icon"><i class="fas fa-users-gear"></i></div>
+                        <h3>Weak Collaboration</h3>
+                        <p>Solved via <strong>Self-Adaptive Crossover</strong>. Dynamically balances exploration and exploitation based on island progress.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="architecture" class="architecture">
+            <div class="container">
+                <h2>System Architecture</h2>
+                <p class="section-desc">A robust, modular design built for scalability and performance.</p>
+                <div class="arch-visual">
+                    <img src="../assets/architecture.png" alt="System Architecture">
+                </div>
+            </div>
+        </section>
+
+        <section id="quickstart" class="quickstart">
+            <div class="container">
+                <h2>Quick Start</h2>
+                <div class="code-window">
+                    <div class="window-header">
+                        <span class="dot red"></span>
+                        <span class="dot yellow"></span>
+                        <span class="dot green"></span>
+                        <span class="title">terminal</span>
+                    </div>
+                    <div class="window-body">
+                        <pre><code><span class="comment"># Install from source</span>
+pip install -e .
+
+<span class="comment"># Set your API key</span>
+export OPENAI_API_KEY="your-key"
+
+<span class="comment"># Run the example</span>
+python openpacevolve-run.py \
+    examples/function_minimization/initial_program.py \
+    examples/function_minimization/evaluator.py \
+    --iterations 20</code></pre>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Hassen Hamdi. OpenPACEvolve is Apache-2.0 licensed.</p>
+        </div>
+    </footer>
+</body>
+</html>

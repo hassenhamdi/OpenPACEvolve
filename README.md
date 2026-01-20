@@ -1,8 +1,16 @@
 # OpenPACEvolve
 
+![OpenPACEvolve Banner](assets/banner.png)
+
+[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+[![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/release/python-3100/)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com)
+
 **Open-source implementation of PACEvolve - Progress-Aware Consistent Evolution**
 
 OpenPACEvolve is an evolutionary coding agent framework that evolves programs to optimize for user-defined metrics. It implements the PACEvolve algorithm which addresses three key challenges in evolutionary agents:
+
+![Architecture Concept](assets/architecture.png)
 
 - **Context Pollution** → Hierarchical Context Management (HCM)
 - **Mode Collapse** → Momentum-Based Backtracking (MBB)
@@ -159,9 +167,9 @@ If you use OpenPACEvolve in your research, please cite:
 
 ```bibtex
 @software{openpacevolve2025,
-  author = {Hamdi, Hassen},
+  author = {Hassen Hamdi},
   title = {OpenPACEvolve: an open source mature implementation of PACEvolve},
-  year = {2026},
-  url = {https://github.com/Hassen/openevolve}
+  year = {2025},
+  url = {https://github.com/HassenHamdi/OpenPACEvolve}
 }
 ```
