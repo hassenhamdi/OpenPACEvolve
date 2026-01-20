@@ -161,7 +161,7 @@ If you use OpenPACEvolve in your research, please cite:
 @software{openpacevolve2025,
   author = {Hamdi, Hassen},
   title = {OpenPACEvolve: an open source mature implementation of PACEvolve},
-  year = {2025},
+  year = {2026},
   url = {https://github.com/Hassen/openevolve}
 }
 ```
